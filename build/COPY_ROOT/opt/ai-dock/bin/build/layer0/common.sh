@@ -15,8 +15,8 @@ build_common_create_env() {
     ln -sf $(ldconfig -p | grep -Po "libtcmalloc_minimal.so.\d" | head -n 1) \
         /lib/x86_64-linux-gnu/libtcmalloc.so
     
-    micromamba create -n comfyui
-    micromamba run -n comfyui mamba-skel
+    micromamba create -n comfyui -y
+    micromamba run -n comfyui mamba-skel -y
     micromamba install -n comfyui -y \
         python="${PYTHON_VERSION}" \
         ipykernel \
@@ -25,15 +25,15 @@ build_common_create_env() {
     micromamba run -n comfyui install-pytorch -v "$PYTORCH_VERSION"
 
     # RunPod serverless support
-    micromamba create -n serverless 
-    micromamba run -n serverless mamba-skel
-    micromamba install -n serverless \
+    micromamba create -n serverless -y
+    micromamba run -n serverless mamba-skel -y
+    micromamba install -n serverless -y \
         python=3.10 \
         python-magic \
         ipykernel \
         ipywidgets \
         nano
-    micromamba run -n serverless $PIP_INSTALL \
+    micromamba run -n serverless -y $PIP_INSTALL \
         runpod
 }
 
