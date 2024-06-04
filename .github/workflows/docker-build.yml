@@ -2,8 +2,8 @@ name: Docker Build
 
 on:
   workflow_dispatch:
-  #push:
-  #  branches: [ "main" ]
+  push:
+   branches: [ "main" ]
     
 env:
   UBUNTU_VERSION: 22.04
