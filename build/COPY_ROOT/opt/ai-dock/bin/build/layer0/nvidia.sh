@@ -13,7 +13,8 @@ build_nvidia_install_comfyui() {
         pytorch=${PYTORCH_VERSION} \
         pytorch-cuda="$(cut -d '.' -f 1,2 <<< "${CUDA_VERSION}")"
 
-    build_common_install_comfyui
+    # build_common_install_comfyui
+    /opt/ai-dock/bin/update-comfyui.sh
 }
 
 build_nvidia_main "$@"
