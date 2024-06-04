@@ -4,7 +4,6 @@ source /opt/ai-dock/etc/environment.sh
 
 build_common_main() {
     build_common_create_env
-    build_common_install_jupyter_kernels
 }
 
 build_common_create_env() {
@@ -36,31 +35,6 @@ build_common_create_env() {
         nano
     micromamba run -n serverless $PIP_INSTALL \
         runpod
-}
-
-
-build_common_install_jupyter_kernels() {
-    kernel_path=/usr/local/share/jupyter/kernels
-    
-    # Add the often-present "Python3 (ipykernel) as a comfyui alias"
-    rm -rf ${kernel_path}/python3
-    dir="${kernel_path}/python3"
-    file="${dir}/kernel.json"
-    cp -rf ${kernel_path}/../_template ${dir}
-    sed -i 's/DISPLAY_NAME/'"Python3 (ipykernel)"'/g' ${file}
-    sed -i 's/PYTHON_MAMBA_NAME/'"comfyui"'/g' ${file}
-    
-    dir="${kernel_path}/comfyui"
-    file="${dir}/kernel.json"
-    cp -rf ${kernel_path}/../_template ${dir}
-    sed -i 's/DISPLAY_NAME/'"ComfyUI"'/g' ${file}
-    sed -i 's/PYTHON_MAMBA_NAME/'"comfyui"'/g' ${file}
-    
-    dir="${kernel_path}/serverless"
-    file="${dir}/kernel.json"
-    cp -rf ${kernel_path}/../_template ${dir}
-    sed -i 's/DISPLAY_NAME/'"Serverless"'/g' ${file}
-    sed -i 's/PYTHON_MAMBA_NAME/'"serverless"'/g' ${file}
 }
 
 build_common_install_comfyui() {

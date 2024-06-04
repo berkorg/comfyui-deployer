@@ -143,4 +143,3 @@ function build_extra_download() {
 umask 002
 
 build_extra_start
-fix-permissions.sh -o container
