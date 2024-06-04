@@ -1,6 +1,6 @@
 # For build automation - Allows building from any ai-dock base image
 # Use a *cuda*base* image as default because pytorch brings the libs
-ARG IMAGE_BASE="ghcr.io/berkorg/comfyui-deployer/python:3.10-cuda-11.8.0-runtime-22.04"
+ARG IMAGE_BASE="ghcr.io/ai-dock/comfyui/python:3.10-cuda-11.8.0-runtime-22.04"
 FROM ${IMAGE_BASE}
 
 LABEL org.opencontainers.image.source https://github.com/ai-dock/comfyui
