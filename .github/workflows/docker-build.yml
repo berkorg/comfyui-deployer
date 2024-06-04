@@ -20,7 +20,6 @@ jobs:
           # Only building periodic sha tagged images
           - {latest: "true", sha: "719fb2c", python: "3.10", pytorch: "2.2.2", cuda: "11.8.0-runtime"}
           - {latest: "false", sha: "719fb2c", python: "3.10", pytorch: "2.2.2", cuda: "11.8.0-runtime"}
-          - {latest: "false", sha: "719fb2c", python: "3.10", pytorch: "2.2.2", cuda: "12.1.0-runtime"}
     steps:
       -
         name: Free Space
@@ -81,7 +80,7 @@ jobs:
         with:
           context: build
           build-args: |
-            IMAGE_BASE=ghcr.io/ai-dock/comfyui:latest
+            IMAGE_BASE=ghcr.io/berkorg/comfyui-deployer:cuda-11.8.0-runtime-22.04-719fb2c
             PYTHON_VERSION=${{ matrix.build.python }}
             PYTORCH_VERSION=${{ matrix.build.pytorch }}
             COMFYUI_SHA=${{ env.COMFYUI_SHA }}

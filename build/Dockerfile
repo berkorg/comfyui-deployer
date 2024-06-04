@@ -1,6 +1,6 @@
 # For build automation - Allows building from any ai-dock base image
 # Use a *cuda*base* image as default because pytorch brings the libs
-ARG IMAGE_BASE="ghcr.io/ai-dock/comfyui:latest"
+ARG IMAGE_BASE="ghcr.io/berkorg/comfyui-deployer:cuda-11.8.0-runtime-22.04-719fb2c"
 FROM ${IMAGE_BASE}
 
 ARG PYTHON_VERSION="3.10"
