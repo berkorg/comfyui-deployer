@@ -33,7 +33,7 @@ build_common_create_env() {
         ipykernel \
         ipywidgets \
         nano
-    micromamba run -n serverless -y $PIP_INSTALL \
+    micromamba run -n serverless $PIP_INSTALL \
         runpod
 }
 
