@@ -81,7 +81,7 @@ jobs:
         with:
           context: build
           build-args: |
-            IMAGE_BASE=ghcr.io/ai-dock/comfyui:latests
+            IMAGE_BASE=ghcr.io/ai-dock/comfyui:latest
             PYTHON_VERSION=${{ matrix.build.python }}
             PYTORCH_VERSION=${{ matrix.build.pytorch }}
             COMFYUI_SHA=${{ env.COMFYUI_SHA }}
