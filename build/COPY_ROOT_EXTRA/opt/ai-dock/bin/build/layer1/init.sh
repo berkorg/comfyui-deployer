@@ -13,8 +13,6 @@ NODES=(
     "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
     ## LAMA OBJECT REMOVAL
     "https://github.com/sipherxyz/comfyui-art-venture"
-    ## SDXL Prompt Styler
-    "https://github.com/twri/sdxl_prompt_styler"
     ## REMBG (Image background remover)
     "https://github.com/berkelmas/rembg-comfyui-node"
     ## IP Adapter Plus Custom Node
