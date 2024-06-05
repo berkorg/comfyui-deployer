@@ -31,6 +31,10 @@ NODES=(
     "https://github.com/Fannovel16/comfyui_controlnet_aux"
     ## IMPACT PACK
     "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+    ## Advanced Controlnet
+    "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet"
+    ## Easy Comfy Nodes for fetching from URL
+    "https://github.com/wmatson/easy-comfy-nodes"
 )
 
 CHECKPOINT_MODELS=(
