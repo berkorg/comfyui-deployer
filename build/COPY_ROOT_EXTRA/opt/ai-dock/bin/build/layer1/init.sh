@@ -35,6 +35,8 @@ NODES=(
     "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet"
     ## Easy Comfy Nodes for fetching from URL
     "https://github.com/wmatson/easy-comfy-nodes"
+    ## Comfy Essentials
+    "https://github.com/cubiq/ComfyUI_essentials"
 )
 
 CHECKPOINT_MODELS=(

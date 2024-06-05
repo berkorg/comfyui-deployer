@@ -82,7 +82,7 @@ class BaseHandler:
         except:
             return False
 
-    def queue_job(self, timeout=30):
+    def queue_job(self, timeout=120):
         try:
             self.job_time_queued = datetime.datetime.now()
             while (
