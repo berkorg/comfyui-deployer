@@ -9,7 +9,7 @@ env:
 
 jobs:
   cpu-base:
-    runs-on: ai-runner-8-core
+    runs-on: ai-runner-32-core
     strategy:
       fail-fast: false
       matrix:
