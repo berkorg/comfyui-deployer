@@ -5,6 +5,7 @@
 # Packages are installed after nodes so we can fix them...
 PYTHON_PACKAGES=(
     "opencv-python==4.7.0.72"
+    "rembg[gpu]==2.0.57"
 )
 
 NODES=(
@@ -199,6 +200,9 @@ function build_extra_download() {
     wget -qnc --content-disposition --show-progress "${url}" -O "${path}/${custom_name}" 
 }
 
-umask 002
+# umask 002
+echo LD_LIBRARY_PATH BEFORE $LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$(python3 -c "import tensorrt; print(tensorrt._path_)"):$LD_LIBRARY_PATH
+echo LD_LIBRARY_PATH AFTER $LD_LIBRARY_PATH
 
 build_extra_start

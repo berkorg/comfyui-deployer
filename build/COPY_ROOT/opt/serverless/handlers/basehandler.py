@@ -84,6 +84,7 @@ class BaseHandler:
 
     def queue_job(self, timeout=120):
         try:
+            print("OS Environ LD_LIBRARY_PATH: ", os.environ['LD_LIBRARY_PATH'])
             self.job_time_queued = datetime.datetime.now()
             while (
                 (datetime.datetime.now() - self.job_time_queued).seconds < timeout
@@ -232,7 +233,7 @@ class BaseHandler:
             print("webhook_url is NOT valid!")
 
     def handle(self):
-        self.comfyui_job_id = self.queue_job(30)
+        self.comfyui_job_id = self.queue_job(120)
 
         status = None
         while status != "complete":
