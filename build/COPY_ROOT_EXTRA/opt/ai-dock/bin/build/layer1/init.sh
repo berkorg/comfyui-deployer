@@ -5,8 +5,6 @@
 # Packages are installed after nodes so we can fix them...
 PYTHON_PACKAGES=(
     "opencv-python==4.7.0.72"
-    "rembg[gpu]==2.0.57"
-    "tensorrt==10.0.1"
 )
 
 NODES=(
@@ -18,7 +16,7 @@ NODES=(
     ## SDXL Prompt Styler
     "https://github.com/twri/sdxl_prompt_styler"
     ## REMBG (Image background remover)
-    "https://github.com/Jcd1230/rembg-comfyui-node.git"
+    "https://github.com/berkelmas/rembg-comfyui-node"
     ## IP Adapter Plus Custom Node
     "https://github.com/cubiq/ComfyUI_IPAdapter_plus"
     ## TILE UPSCALER
@@ -204,7 +202,3 @@ function build_extra_download() {
 # umask 002
 
 build_extra_start
-
-echo LD_LIBRARY_PATH BEFORE $LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=$(python3 -c "import tensorrt; print(tensorrt._path_)"):$LD_LIBRARY_PATH
-echo LD_LIBRARY_PATH AFTER $LD_LIBRARY_PATH

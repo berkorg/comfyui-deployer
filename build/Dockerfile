@@ -32,5 +32,8 @@ ENV MAMBA_DEFAULT_RUN="micromamba run -n $MAMBA_DEFAULT_ENV"
 COPY ./COPY_ROOT_EXTRA/ /
 RUN /opt/ai-dock/bin/build/layer1/init.sh
 
+## Give permission to write
+RUN chmod -R 777 /opt/ComfyUI
+
 # Keep init.sh as-is and place additional logic in /opt/ai-dock/bin/preflight.sh
 CMD ["init.sh"]
