@@ -38,7 +38,7 @@ NODES=(
 )
 
 CHECKPOINT_MODELS=(
-    ## JUGGERNAUT SDXL (Needs to get refreshed on every single deploy because of its being S3 presigned url)
+    ## JUGGERNAUT SDXL (Needs to get refreshed on every single deploy because of its being S3 presigned url) CIVIT AI URL: https://civitai.com/api/download/models/471120
     "https://civitai-delivery-worker-prod.5ac0637cfd0766c97916cefa3764fbdf.r2.cloudflarestorage.com/model/764940/juggernautX.lIDA.safetensors?X-Amz-Expires=86400&response-content-disposition=attachment%3B%20filename%3D%22Juggernaut_X_RunDiffusion_Hyper.safetensors%22&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e01358d793ad6966166af8b3064953ad/20240605/us-east-1/s3/aws4_request&X-Amz-Date=20240605T214939Z&X-Amz-SignedHeaders=host&X-Amz-Signature=5b1652d5ec10fdec8a3bdb734505a732d08506ae6eb86c2b4b97b9239d8ab99f Juggernaut_X_RunDiffusion_Hyper.safetensors"
     ## SD 1.5
     "https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt v1-5-pruned-emaonly.ckpt"

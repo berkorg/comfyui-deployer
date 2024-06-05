@@ -11,7 +11,7 @@ env:
 
 jobs:
   nvidia-base:
-    runs-on: ai-runner-8-core
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
