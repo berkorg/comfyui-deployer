@@ -9,7 +9,7 @@ env:
 
 jobs:
   cpu-base:
-    runs-on: ubuntu-latest
+    runs-on: ai-runner-8-core
     strategy:
       fail-fast: false
       matrix:
