@@ -19,7 +19,7 @@ jobs:
           # Undeclared SHA tags with latest commit from master branch
           # Only building periodic sha tagged images
           - {latest: "true", sha: "719fb2c", python: "3.10", pytorch: "2.2.2", cuda: "11.8.0-runtime"}
-          - {latest: "false", sha: "719fb2c", python: "3.10", pytorch: "2.2.2", cuda: "11.8.0-runtime"}
+          # - {latest: "false", sha: "719fb2c", python: "3.10", pytorch: "2.2.2", cuda: "11.8.0-runtime"}
     steps:
       -
         name: Free Space
