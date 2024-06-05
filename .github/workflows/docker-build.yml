@@ -64,7 +64,7 @@ jobs:
           [ -z "$COMFYUI_SHA" ] && { echo "Error: COMFYUI_SHA is empty. Exiting script." >&2; exit 1; }
           echo "COMFYUI_SHA=${COMFYUI_SHA}" >> ${GITHUB_ENV}
 
-          base_tag="cuda-${{ matrix.build.cuda }}-${{ env.UBUNTU_VERSION }}-add-environment-ldpath2"
+          base_tag="cuda-${{ matrix.build.cuda }}-${{ env.UBUNTU_VERSION }}-remove-duplicate-sdxl"
 
           # Latest tags OR sha - Not both
           if [[ ${{ matrix.build.latest }} == "true" ]]; then
