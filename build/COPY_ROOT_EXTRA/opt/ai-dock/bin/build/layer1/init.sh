@@ -6,6 +6,7 @@
 PYTHON_PACKAGES=(
     "opencv-python==4.7.0.72"
     "rembg[gpu]==2.0.57"
+    "tensorrt==10.0.1"
 )
 
 NODES=(
@@ -201,8 +202,9 @@ function build_extra_download() {
 }
 
 # umask 002
+
+build_extra_start
+
 echo LD_LIBRARY_PATH BEFORE $LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$(python3 -c "import tensorrt; print(tensorrt._path_)"):$LD_LIBRARY_PATH
 echo LD_LIBRARY_PATH AFTER $LD_LIBRARY_PATH
-
-build_extra_start
