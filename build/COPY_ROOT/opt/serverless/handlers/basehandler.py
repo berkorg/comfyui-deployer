@@ -8,6 +8,9 @@ import shutil
 from utils.s3utils import s3utils
 from utils.network import Network
 from utils.filesystem import Filesystem
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class BaseHandler:
@@ -82,9 +85,9 @@ class BaseHandler:
         except:
             return False
 
-    def queue_job(self, timeout=120):
+    def queue_job(self, timeout=360):
         try:
-            print("OS Environ LD_LIBRARY_PATH: ", os.environ['LD_LIBRARY_PATH'])
+            print("OS Environ LD_LIBRARY_PATH: ", os.environ["LD_LIBRARY_PATH"])
             self.job_time_queued = datetime.datetime.now()
             while (
                 (datetime.datetime.now() - self.job_time_queued).seconds < timeout
@@ -142,7 +145,8 @@ class BaseHandler:
         return base64_string
 
     def get_result(self, job_id):
-        result = requests.get(self.ENDPOINT_HISTORY).json()[self.comfyui_job_id]
+        # result = requests.get(self.ENDPOINT_HISTORY).json()[self.comfyui_job_id]
+        result = requests.get(self.ENDPOINT_HISTORY).json()[self.job_id]
 
         prompt = result["prompt"]
         outputs = result["outputs"]
@@ -153,9 +157,14 @@ class BaseHandler:
         os.makedirs(custom_output_dir, exist_ok=True)
 
         for key, value in outputs.items():
+            logger.info("outputs.items key, value: ", key, value)
             for inner_key, inner_value in value.items():
+                logger.info(
+                    "value.items() inner_key, inner_value ", inner_key, inner_value
+                )
                 if isinstance(inner_value, list):
                     for item in inner_value:
+                        logger.info("inner_value -> item ", item)
                         if item.get("type") == "output":
                             original_path = f"{self.OUTPUT_DIR}{item['subfolder']}/{item['filename']}"
                             new_path = f"{custom_output_dir}/{item['filename']}"
@@ -233,7 +242,7 @@ class BaseHandler:
             print("webhook_url is NOT valid!")
 
     def handle(self):
-        self.comfyui_job_id = self.queue_job(120)
+        self.comfyui_job_id = self.queue_job(360)
 
         status = None
         while status != "complete":
