@@ -103,11 +103,21 @@ jobs:
           fi
           echo "TAGS=${TAGS}" >> ${GITHUB_ENV}
 
+      - name: Get tag
+        id: get-tag
+        run: echo ::set-output name=short_ref::${GITHUB_REF#refs/*/}
+
       - name: Build image
         run: docker build ./build --file ./build/Dockerfile --tag ${{ env.GAR_LOCATION }} --build-arg IMAGE_BASE=ghcr.io/berkorg/comfyui-deployer:cuda-11.8.0-runtime-22.04-719fb2c --build-arg PYTHON_VERSION=${{ matrix.build.python }} --build-arg PYTORCH_VERSION=${{ matrix.build.pytorch }} --build-arg COMFYUI_SHA=${{ env.COMFYUI_SHA }}
 
-      - name: Push image
-        run: docker push ${{ env.GAR_LOCATION }}
+      - id: docker-push-tagged
+        name: Tag Docker image and push to Google Artifact Registry
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: |
+             us-central1-docker.pkg.dev/ai-product-photos/ai-product-photos-repo/ai-product-photo-img:${{ steps.get-tag.outputs.short_ref }}
+             us-central1-docker.pkg.dev/ai-product-photos/ai-product-photos-repo/ai-product-photo-img:latest
 
       # -
       #   name: Build and push
