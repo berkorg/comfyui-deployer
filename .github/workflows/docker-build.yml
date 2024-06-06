@@ -9,7 +9,7 @@ env:
   UBUNTU_VERSION: 22.04
   BUILDX_NO_DEFAULT_ATTESTATIONS: 1
   PROJECT_ID: ai-product-photos
-  REGION: us-cetnral1
+  REGION: us-central1
   GAR_LOCATION: us-central1-docker.pkg.dev/ai-product-photos/ai-product-photos-repo
   
 
@@ -67,7 +67,7 @@ jobs:
         name: Login to GAR
         uses: docker/login-action@v3
         with:
-          registry: us-cetnral1-docker.pkg.dev
+          registry: us-central1-docker.pkg.dev
           username: _json_key
           password: ${{ secrets.SERVICE_ACCOUNT_KEY }}
 
