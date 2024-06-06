@@ -11,11 +11,11 @@ env:
   PROJECT_ID: ai-product-photos
   REGION: us-central1
   GAR_LOCATION: us-central1-docker.pkg.dev/ai-product-photos/ai-product-photos-repo
-  IMAGE_NAME: us-central1-docker.pkg.dev/ai-product-photos/ai-product-photos-repo/ai-product-photo-img:example
+  IMAGE_NAME: us-central1-docker.pkg.dev/ai-product-photos/ai-product-photos-repo/ai-product-photo-img:add-models
 
 jobs:
   nvidia-base:
-    runs-on: ubuntu-latest
+    runs-on: ai-runner-8-core
     strategy:
       fail-fast: false
       matrix:
