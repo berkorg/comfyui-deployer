@@ -145,8 +145,7 @@ class BaseHandler:
         return base64_string
 
     def get_result(self, job_id):
-        # result = requests.get(self.ENDPOINT_HISTORY).json()[self.comfyui_job_id]
-        result = requests.get(self.ENDPOINT_HISTORY).json()[self.job_id]
+        result = requests.get(self.ENDPOINT_HISTORY).json()[self.comfyui_job_id]
 
         prompt = result["prompt"]
         outputs = result["outputs"]
