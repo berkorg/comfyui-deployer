@@ -8,9 +8,7 @@ import shutil
 from utils.s3utils import s3utils
 from utils.network import Network
 from utils.filesystem import Filesystem
-import logging
 
-logger = logging.getLogger(__name__)
 
 
 class BaseHandler:
@@ -156,14 +154,14 @@ class BaseHandler:
         os.makedirs(custom_output_dir, exist_ok=True)
 
         for key, value in outputs.items():
-            logger.info("outputs.items key, value: ", key, value)
+            print("outputs.items key, value: ", key, value)
             for inner_key, inner_value in value.items():
-                logger.info(
+                print(
                     "value.items() inner_key, inner_value ", inner_key, inner_value
                 )
                 if isinstance(inner_value, list):
                     for item in inner_value:
-                        logger.info("inner_value -> item ", item)
+                        print("inner_value -> item ", item)
                         if item.get("type") == "output":
                             original_path = f"{self.OUTPUT_DIR}{item['subfolder']}/{item['filename']}"
                             new_path = f"{custom_output_dir}/{item['filename']}"
