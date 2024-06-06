@@ -96,7 +96,7 @@ jobs:
           echo "TAGS=${TAGS}" >> ${GITHUB_ENV}
 
       - name: Build image
-        run: docker build . --file ./build/Dockerfile --tag ${{ env.GAR_LOCATION }} --build-arg IMAGE_BASE=ghcr.io/berkorg/comfyui-deployer:cuda-11.8.0-runtime-22.04-719fb2c --build-arg PYTHON_VERSION=${{ matrix.build.python }} --build-arg PYTORCH_VERSION=${{ matrix.build.pytorch }} --build-arg COMFYUI_SHA=${{ env.COMFYUI_SHA }}
+        run: docker build ./build --file ./build/Dockerfile --tag ${{ env.GAR_LOCATION }} --build-arg IMAGE_BASE=ghcr.io/berkorg/comfyui-deployer:cuda-11.8.0-runtime-22.04-719fb2c --build-arg PYTHON_VERSION=${{ matrix.build.python }} --build-arg PYTORCH_VERSION=${{ matrix.build.pytorch }} --build-arg COMFYUI_SHA=${{ env.COMFYUI_SHA }}
 
       - name: Push image
         run: docker push ${{ env.GAR_LOCATION }}
