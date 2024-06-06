@@ -6,6 +6,9 @@ on:
 env:
   UBUNTU_VERSION: 22.04
   BUILDX_NO_DEFAULT_ATTESTATIONS: 1
+  PROJECT_ID: ai-product-photos
+  REGION: us-cetnral1
+  GAR_LOCATION: us-central1-docker.pkg.dev/ai-product-photos/ai-product-photos-repo
 
 jobs:
   cpu-base:

@@ -10,41 +10,38 @@ PYTHON_PACKAGES=(
 NODES=(
     "https://github.com/ltdrdata/ComfyUI-Manager"
     ## TILE UPSCALER
-    "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
-    ## LAMA OBJECT REMOVAL
-    "https://github.com/sipherxyz/comfyui-art-venture"
-    ## REMBG (Image background remover)
-    "https://github.com/berkelmas/rembg-comfyui-node"
-    ## IP Adapter Plus Custom Node
-    "https://github.com/cubiq/ComfyUI_IPAdapter_plus"
-    ## TILE UPSCALER
-    "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
-    ## BASE64 Image loader
-    "https://github.com/Acly/comfyui-tooling-nodes"
-    ## MIXLAB
-    "https://github.com/shadowcz007/comfyui-mixlab-nodes"
-    ## WAS NODE ???
-    "https://github.com/WASasquatch/was-node-suite-comfyui"
-    ## CONTROLNET
-    "https://github.com/Fannovel16/comfyui_controlnet_aux"
-    ## IMPACT PACK
-    "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
-    ## Advanced Controlnet
-    "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet"
-    ## Easy Comfy Nodes for fetching from URL
-    "https://github.com/wmatson/easy-comfy-nodes"
-    ## Comfy Essentials
-    "https://github.com/cubiq/ComfyUI_essentials"
+    # "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
+    # ## LAMA OBJECT REMOVAL
+    # "https://github.com/sipherxyz/comfyui-art-venture"
+    # ## REMBG (Image background remover)
+    # "https://github.com/berkelmas/rembg-comfyui-node"
+    # ## IP Adapter Plus Custom Node
+    # "https://github.com/cubiq/ComfyUI_IPAdapter_plus"
+    # ## TILE UPSCALER
+    # "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
+    # ## BASE64 Image loader
+    # "https://github.com/Acly/comfyui-tooling-nodes"
+    # ## MIXLAB
+    # "https://github.com/shadowcz007/comfyui-mixlab-nodes"
+    # ## WAS NODE ???
+    # "https://github.com/WASasquatch/was-node-suite-comfyui"
+    # ## CONTROLNET
+    # "https://github.com/Fannovel16/comfyui_controlnet_aux"
+    # ## IMPACT PACK
+    # "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+    # ## Advanced Controlnet
+    # "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet"
+    # ## Easy Comfy Nodes for fetching from URL
+    # "https://github.com/wmatson/easy-comfy-nodes"
+    # ## Comfy Essentials
+    # "https://github.com/cubiq/ComfyUI_essentials"
 )
 
 CHECKPOINT_MODELS=(
     ## JUGGERNAUT SDXL (Needs to get refreshed on every single deploy because of its being S3 presigned url) CIVIT AI URL: https://civitai.com/api/download/models/471120
-    "https://civitai-delivery-worker-prod.5ac0637cfd0766c97916cefa3764fbdf.r2.cloudflarestorage.com/model/764940/juggernautX.lIDA.safetensors?X-Amz-Expires=86400&response-content-disposition=attachment%3B%20filename%3D%22Juggernaut_X_RunDiffusion_Hyper.safetensors%22&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e01358d793ad6966166af8b3064953ad/20240605/us-east-1/s3/aws4_request&X-Amz-Date=20240605T214939Z&X-Amz-SignedHeaders=host&X-Amz-Signature=5b1652d5ec10fdec8a3bdb734505a732d08506ae6eb86c2b4b97b9239d8ab99f Juggernaut_X_RunDiffusion_Hyper.safetensors"
+    # "https://civitai-delivery-worker-prod.5ac0637cfd0766c97916cefa3764fbdf.r2.cloudflarestorage.com/model/764940/juggernautX.lIDA.safetensors?X-Amz-Expires=86400&response-content-disposition=attachment%3B%20filename%3D%22Juggernaut_X_RunDiffusion_Hyper.safetensors%22&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e01358d793ad6966166af8b3064953ad/20240605/us-east-1/s3/aws4_request&X-Amz-Date=20240605T214939Z&X-Amz-SignedHeaders=host&X-Amz-Signature=5b1652d5ec10fdec8a3bdb734505a732d08506ae6eb86c2b4b97b9239d8ab99f Juggernaut_X_RunDiffusion_Hyper.safetensors"
     ## SD 1.5
     "https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt v1-5-pruned-emaonly.ckpt"
-    #"https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.ckpt"
-    #"https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors"
-    #"https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors"
 )
 
 LORA_MODELS=(
@@ -64,42 +61,25 @@ ESRGAN_MODELS=(
 )
 
 CONTROLNET_MODELS=(
-    ## TILE UPSCALER CONTROLNET
-    "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth control_v11f1e_sd15_tile.pth"
-    ## DEPTH CONTROLNET
-    "https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank256/control-lora-depth-rank256.safetensors control-lora-depth-rank256.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_canny-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_depth-fp16.safetensors"
-    #"https://huggingface.co/kohya-ss/ControlNet-diff-modules/resolve/main/diff_control_sd15_depth_fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_hed-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_mlsd-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_normal-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_openpose-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_scribble-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_seg-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_canny-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_color-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_depth-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_keypose-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_openpose-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_seg-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_sketch-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_style-fp16.safetensors"
+    # ## TILE UPSCALER CONTROLNET
+    # "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth control_v11f1e_sd15_tile.pth"
+    # ## DEPTH CONTROLNET
+    # "https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank256/control-lora-depth-rank256.safetensors control-lora-depth-rank256.safetensors"
 )
 
 UPSCALE_MODELS=(
-    ## 4x Ultrasharp Upscaler
-    "https://civitai.com/api/download/models/125843 4xUltrasharp_4xUltrasharpV10.pt"
+    # ## 4x Ultrasharp Upscaler
+    # "https://civitai.com/api/download/models/125843 4xUltrasharp_4xUltrasharpV10.pt"
 )
 
 CLIP_VISION=(
-    ## IP ADAPTER CLIP VISION
-    "https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors clip-vision-1.safetensors"
+    # ## IP ADAPTER CLIP VISION
+    # "https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors clip-vision-1.safetensors"
 )
 
 IP_ADAPTER=(
-    ## IP ADAPTER
-    "https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors ip-adapter-plus_sdxl_vit-h.safetensors"
+    # ## IP ADAPTER
+    # "https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors ip-adapter-plus_sdxl_vit-h.safetensors"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
