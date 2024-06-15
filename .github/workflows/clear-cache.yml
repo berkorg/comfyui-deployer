@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   clear-cache:
-    runs-on: ai-runner-8-core
+    runs-on: ubuntu-latest
     steps:
       - name: Clear cache
         uses: actions/github-script@v6

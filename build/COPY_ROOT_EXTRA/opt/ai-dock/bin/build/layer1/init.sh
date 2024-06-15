@@ -82,6 +82,16 @@ IP_ADAPTER=(
     "https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors ip-adapter-plus_sdxl_vit-h.safetensors"
 )
 
+INPAINT=(
+    ## inpainter
+    "https://huggingface.co/lllyasviel/fooocus_inpaint"
+)
+
+MIDAS_ANNOTATOR=(
+    ## Midas depth estimator to get installed into a custom node
+    "https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/dpt_hybrid-midas-501f0c75.pt dpt_hybrid-midas-501f0c75.pt"
+)
+
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
 
 function build_extra_start() {
@@ -110,6 +120,14 @@ function build_extra_start() {
         "${CLIP_VISION[@]}"
     build_extra_get_models \
         "/opt/storage/stable_diffusion/models/ipadapter" \
+        "${IP_ADAPTER[@]}"
+
+    download_extra_custom_node_models \
+        "/opt/storage/stable_diffusion/models/inpaint" \
+        "${INPAINT[@]}"
+
+    build_extra_get_models \
+        "/opt/ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators" \
         "${IP_ADAPTER[@]}"
 
     cd /opt/ComfyUI && \
@@ -142,6 +160,20 @@ function build_extra_get_nodes() {
             fi
         fi
     done
+}
+
+function download_extra_custom_node_models() {
+    if [[ -n $2 ]]; then
+        dir="$1"
+        mkdir -p "$dir"
+        shift
+        arr=("$@")
+        
+        printf "Downloading %s extra custom node repositories(s) to %s...\n" "${#arr[@]}" "$dir"
+        for repo in "${arr[@]}"; do
+            git clone "${repo}" "${dir}" --recursive
+        done
+    fi
 }
 
 function build_extra_install_python_packages() {
