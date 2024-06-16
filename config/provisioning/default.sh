@@ -105,38 +105,38 @@ function provisioning_start() {
     provisioning_get_nodes
     provisioning_install_python_packages
     provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/ckpt" \
+        "${WORKSPACE}/ComfyUI/models/checkpoints" \
         "${CHECKPOINT_MODELS[@]}"
     provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/lora" \
+        "${WORKSPACE}/ComfyUI/models/lora" \
         "${LORA_MODELS[@]}"
     provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/controlnet" \
+        "${WORKSPACE}/ComfyUI/models/controlnet" \
         "${CONTROLNET_MODELS[@]}"
     provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/vae" \
+        "${WORKSPACE}/ComfyUI/models/vae" \
         "${VAE_MODELS[@]}"
     provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/esrgan" \
+        "${WORKSPACE}/ComfyUI/models/esrgan" \
         "${ESRGAN_MODELS[@]}"
 
     provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/upscale_models" \
+        "${WORKSPACE}/ComfyUI/models/upscale_models" \
         "${UPSCALE_MODELS[@]}"
     provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/clip_vision" \
+        "${WORKSPACE}/ComfyUI/models/clip_vision" \
         "${CLIP_VISION[@]}"
     provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/ipadapter" \
+        "${WORKSPACE}/ComfyUI/models/ipadapter" \
         "${IP_ADAPTER[@]}"
 
     download_extra_custom_node_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/inpaint" \
+        "${WORKSPACE}/ComfyUI/models/inpaint" \
         "${INPAINT[@]}"
 
-    # provisioning_get_models \
-    #     "${WORKSPACE}/storage/custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators" \
-    #     "${IP_ADAPTER[@]}"
+    provisioning_get_models \
+        "${WORKSPACE}/ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators" \
+        "${IP_ADAPTER[@]}"
 
     provisioning_print_end
 }
@@ -145,7 +145,7 @@ function provisioning_start() {
 function provisioning_get_nodes() {
     for repo in "${NODES[@]}"; do
         dir="${repo##*/}"
-        path="/opt/ComfyUI/custom_nodes/${dir}"
+        path="${WORKSPACE}/ComfyUI/custom_nodes/${dir}"
         requirements="${path}/requirements.txt"
         if [[ -d $path ]]; then
             if [[ ${AUTO_UPDATE,,} != "false" ]]; then
