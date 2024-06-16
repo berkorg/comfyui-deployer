@@ -186,7 +186,7 @@ function provisioning_get_models() {
             IFS=' ' read -ra split <<< "${item}"
             link="${split[0]}"
             custom_name="${split[1]}"
-            build_extra_download "${link}" "${dir}" "${custom_name}"
+            provisioning_download "${link}" "${dir}" "${custom_name}"
 
         done
     fi
