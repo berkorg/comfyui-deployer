@@ -11,7 +11,7 @@ env:
   PROJECT_ID: ai-product-photos
   REGION: us-central1
   GAR_LOCATION: us-central1-docker.pkg.dev/ai-product-photos/ai-product-photos-repo
-  IMAGE_NAME: us-central1-docker.pkg.dev/ai-product-photos/ai-product-photos-repo/ai-product-photo-img:add-new-upscaler
+  IMAGE_NAME: us-central1-docker.pkg.dev/ai-product-photos/ai-product-photos-repo/ai-product-photo-img:fix-new-upscaler-name
 
 jobs:
   nvidia-base:

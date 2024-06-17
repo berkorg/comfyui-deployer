@@ -61,7 +61,7 @@ CONTROLNET_MODELS=(
 
 UPSCALE_MODELS=(
     ## Siam
-    "https://civitai.com/api/download/models/156841"
+    "https://civitai.com/api/download/models/156841 4xNMKDSuperscale_4xNMKDSuperscale.pt"
 )
 
 CLIP_VISION=(
