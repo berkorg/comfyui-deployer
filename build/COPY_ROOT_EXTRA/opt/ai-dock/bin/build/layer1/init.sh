@@ -9,16 +9,12 @@ PYTHON_PACKAGES=(
 
 NODES=(
     "https://github.com/ltdrdata/ComfyUI-Manager"
-    # TILE UPSCALER
-    "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
     ## LAMA OBJECT REMOVAL
     "https://github.com/sipherxyz/comfyui-art-venture"
     ## REMBG (Image background remover)
     "https://github.com/berkelmas/rembg-comfyui-node"
     ## IP Adapter Plus Custom Node
     "https://github.com/cubiq/ComfyUI_IPAdapter_plus"
-    ## TILE UPSCALER
-    "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
     ## BASE64 Image loader
     "https://github.com/Acly/comfyui-tooling-nodes"
     ## MIXLAB
@@ -39,9 +35,7 @@ NODES=(
 
 CHECKPOINT_MODELS=(
     # JUGGERNAUT SDXL (Needs to get refreshed on every single deploy because of its being S3 presigned url) CIVIT AI URL: https://civitai.com/api/download/models/471120
-    "https://civitai-delivery-worker-prod.5ac0637cfd0766c97916cefa3764fbdf.r2.cloudflarestorage.com/model/764940/juggernautX.lIDA.safetensors?X-Amz-Expires=86400&response-content-disposition=attachment%3B%20filename%3D%22Juggernaut_X_RunDiffusion_Hyper.safetensors%22&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e01358d793ad6966166af8b3064953ad/20240606/us-east-1/s3/aws4_request&X-Amz-Date=20240606T131023Z&X-Amz-SignedHeaders=host&X-Amz-Signature=37d8607032fcdc9a6f331e504ead92af297561cc65f1ab77cf18da9e4642582c Juggernaut_X_RunDiffusion_Hyper.safetensors"
-    ## SD 1.5
-    "https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt v1-5-pruned-emaonly.ckpt"
+    "https://civitai-delivery-worker-prod.5ac0637cfd0766c97916cefa3764fbdf.r2.cloudflarestorage.com/model/764940/juggernautX.lIDA.safetensors?X-Amz-Expires=86400&response-content-disposition=attachment%3B%20filename%3D%22Juggernaut_X_RunDiffusion_Hyper.safetensors%22&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e01358d793ad6966166af8b3064953ad/20240617/us-east-1/s3/aws4_request&X-Amz-Date=20240617T204845Z&X-Amz-SignedHeaders=host&X-Amz-Signature=0472fecae0af1a99754e238f3137769607c33431cc92e83452c820bae716b113 Juggernaut_X_RunDiffusion_Hyper.safetensors"
 )
 
 LORA_MODELS=(
@@ -61,15 +55,13 @@ ESRGAN_MODELS=(
 )
 
 CONTROLNET_MODELS=(
-    ## TILE UPSCALER CONTROLNET
-    "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth control_v11f1e_sd15_tile.pth"
     ## DEPTH CONTROLNET
     "https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank256/control-lora-depth-rank256.safetensors control-lora-depth-rank256.safetensors"
 )
 
 UPSCALE_MODELS=(
-    ## 4x Ultrasharp Upscaler
-    "https://civitai.com/api/download/models/125843 4xUltrasharp_4xUltrasharpV10.pt"
+    ## Siam
+    "https://civitai.com/api/download/models/156841"
 )
 
 CLIP_VISION=(
