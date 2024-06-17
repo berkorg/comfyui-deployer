@@ -120,7 +120,7 @@ function build_extra_start() {
 
     build_extra_get_models \
         "/opt/ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators" \
-        "${IP_ADAPTER[@]}"
+        "${MIDAS_ANNOTATOR[@]}"
 
     cd /opt/ComfyUI && \
     micromamba run -n comfyui -e LD_PRELOAD=libtcmalloc.so python main.py \
