@@ -3,7 +3,7 @@ name: Docker Remove Background Build
 on:
   workflow_dispatch:
   push:
-   branches: [ "remove-background" ]
+   branches: [ "remove-background-upscale-img" ]
     
 env:
   UBUNTU_VERSION: 22.04
@@ -11,7 +11,7 @@ env:
   PROJECT_ID: ai-product-photos
   REGION: us-central1
   GAR_LOCATION: us-central1-docker.pkg.dev/ai-product-photos/ai-product-photos-repo
-  IMAGE_NAME: us-central1-docker.pkg.dev/ai-product-photos/ai-product-photos-repo/ai-product-photo-img:remove-background-start
+  IMAGE_NAME: us-central1-docker.pkg.dev/ai-product-photos/ai-product-photos-repo/ai-product-photo-img:rmbg-upscale-img-1
 
 jobs:
   nvidia-base:
