@@ -10,11 +10,11 @@ PYTHON_PACKAGES=(
 NODES=(
     "https://github.com/ltdrdata/ComfyUI-Manager"
     ## LAMA OBJECT REMOVAL
-    "https://github.com/sipherxyz/comfyui-art-venture"
+    # "https://github.com/sipherxyz/comfyui-art-venture"
     ## REMBG (Image background remover)
-    # "https://github.com/berkelmas/rembg-comfyui-node"
+    "https://github.com/berkelmas/rembg-comfyui-node"
     ## IP Adapter Plus Custom Node
-    "https://github.com/cubiq/ComfyUI_IPAdapter_plus"
+    # "https://github.com/cubiq/ComfyUI_IPAdapter_plus"
     ## BASE64 Image loader
     "https://github.com/Acly/comfyui-tooling-nodes"
     ## MIXLAB
@@ -22,11 +22,11 @@ NODES=(
     ## WAS NODE ???
     # "https://github.com/WASasquatch/was-node-suite-comfyui"
     ## CONTROLNET ++
-    "https://github.com/Fannovel16/comfyui_controlnet_aux"
+    # "https://github.com/Fannovel16/comfyui_controlnet_aux"
     ## IMPACT PACK ++
-    "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+    # "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
     ## Advanced Controlnet ++
-    "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet"
+    # "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet"
     ## Easy Comfy Nodes for fetching from URL
     # "https://github.com/wmatson/easy-comfy-nodes"
     ## Comfy Essentials
@@ -94,42 +94,42 @@ BIG_LAMA=(
 function build_extra_start() {
     build_extra_get_nodes
     build_extra_install_python_packages
-    build_extra_get_models \
-        "/opt/storage/stable_diffusion/models/ckpt" \
-        "${CHECKPOINT_MODELS[@]}"
-    build_extra_get_models \
-        "/opt/storage/stable_diffusion/models/lora" \
-        "${LORA_MODELS[@]}"
-    build_extra_get_models \
-        "/opt/storage/stable_diffusion/models/controlnet" \
-        "${CONTROLNET_MODELS[@]}"
-    build_extra_get_models \
-        "/opt/storage/stable_diffusion/models/vae" \
-        "${VAE_MODELS[@]}"
-    build_extra_get_models \
-        "/opt/storage/stable_diffusion/models/esrgan" \
-        "${ESRGAN_MODELS[@]}"
+    # build_extra_get_models \
+    #     "/opt/storage/stable_diffusion/models/ckpt" \
+    #     "${CHECKPOINT_MODELS[@]}"
+    # build_extra_get_models \
+    #     "/opt/storage/stable_diffusion/models/lora" \
+    #     "${LORA_MODELS[@]}"
+    # build_extra_get_models \
+    #     "/opt/storage/stable_diffusion/models/controlnet" \
+    #     "${CONTROLNET_MODELS[@]}"
+    # build_extra_get_models \
+    #     "/opt/storage/stable_diffusion/models/vae" \
+    #     "${VAE_MODELS[@]}"
+    # build_extra_get_models \
+    #     "/opt/storage/stable_diffusion/models/esrgan" \
+    #     "${ESRGAN_MODELS[@]}"
     # build_extra_get_models \
     #     "/opt/storage/stable_diffusion/models/upscale_models" \
     #     "${UPSCALE_MODELS[@]}"
-    build_extra_get_models \
-        "/opt/storage/stable_diffusion/models/clip_vision" \
-        "${CLIP_VISION[@]}"
-    build_extra_get_models \
-        "/opt/storage/stable_diffusion/models/ipadapter" \
-        "${IP_ADAPTER[@]}"
+    # build_extra_get_models \
+    #     "/opt/storage/stable_diffusion/models/clip_vision" \
+    #     "${CLIP_VISION[@]}"
+    # build_extra_get_models \
+    #     "/opt/storage/stable_diffusion/models/ipadapter" \
+    #     "${IP_ADAPTER[@]}"
 
-    build_extra_get_models \
-        "/opt/storage/stable_diffusion/models/lama" \
-        "${BIG_LAMA[@]}"
+    # build_extra_get_models \
+    #     "/opt/storage/stable_diffusion/models/lama" \
+    #     "${BIG_LAMA[@]}"
 
     # download_extra_custom_node_models \
     #     "/opt/storage/stable_diffusion/models/inpaint" \
     #     "${INPAINT[@]}"
 
-    build_extra_get_models \
-        "/opt/ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators" \
-        "${MIDAS_ANNOTATOR[@]}"
+    # build_extra_get_models \
+    #     "/opt/ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators" \
+    #     "${MIDAS_ANNOTATOR[@]}"
 
     cd /opt/ComfyUI && \
     micromamba run -n comfyui -e LD_PRELOAD=libtcmalloc.so python main.py \
