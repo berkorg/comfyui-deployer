@@ -126,7 +126,7 @@ function build_extra_start() {
     #     "${BIG_LAMA[@]}"
 
     download_extra_custom_node_models \
-        "/opt/storage/stable_diffusion/models/inpaint" \
+        "/opt/storage/stable_diffusion/models/inpaint/fooocus_inpaint" \
         "${INPAINT[@]}"
 
     # build_extra_get_models \
