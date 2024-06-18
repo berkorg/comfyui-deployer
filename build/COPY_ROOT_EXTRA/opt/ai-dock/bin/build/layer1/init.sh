@@ -14,7 +14,7 @@ NODES=(
     ## LAMA OBJECT REMOVAL
     # "https://github.com/sipherxyz/comfyui-art-venture"
     ## REMBG (Image background remover)
-    "https://github.com/Jcd1230/rembg-comfyui-node"
+    "https://github.com/berkelmas/rembg-comfyui-node"
     ## IP Adapter Plus Custom Node
     # "https://github.com/cubiq/ComfyUI_IPAdapter_plus"
     ## BASE64 Image loader
