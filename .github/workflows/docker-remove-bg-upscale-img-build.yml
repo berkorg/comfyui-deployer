@@ -12,7 +12,7 @@ env:
   REGION: us-central1
   GAR_LOCATION: us-central1-docker.pkg.dev/ai-product-photos/ai-product-photos-repo
   IMAGE_NAME: us-central1-docker.pkg.dev/ai-product-photos/ai-product-photos-repo/ai-product-photo-img:rmbg-11
-  GH_PACKAGES_IMAGE_NAME: ghcr.io/berkorg/comfyui-deployer:ai-product-photo-img:rmbg-11
+  GH_PACKAGES_IMAGE_NAME: ghcr.io/berkorg/comfyui-deployer:ai-product-photo-img-rmbg-11
 
 jobs:
   nvidia-base:
