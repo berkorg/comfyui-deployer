@@ -20,7 +20,6 @@ storage_map["stable_diffusion/models/style_models"]="/opt/ComfyUI/models/style_m
 storage_map["stable_diffusion/models/ultralytics"]="/opt/ComfyUI/models/ultralytics"
 storage_map["stable_diffusion/models/unet"]="/opt/ComfyUI/models/unet"
 storage_map["stable_diffusion/models/vae"]="/opt/ComfyUI/models/vae"
-storage_map["stable_diffusion/models/upscale_models"]="/opt/ComfyUI/models/upscale_models"
 storage_map["stable_diffusion/models/inpaint"]="/opt/ComfyUI/models/inpaint"
 storage_map["stable_diffusion/models/lama"]="/opt/ComfyUI/models/lama"
 
