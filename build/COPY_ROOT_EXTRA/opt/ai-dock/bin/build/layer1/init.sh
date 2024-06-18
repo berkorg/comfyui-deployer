@@ -86,7 +86,7 @@ MIDAS_ANNOTATOR=(
 
 BIG_LAMA=(
     ## Big Lama for object removal
-    "https://huggingface.co/spaces/aryadytm/remove-photo-object/resolve/f00f2d12ada635f5f30f18ed74200ea89dd26631/assets/big-lama.pt big-lama.pt"
+    "https://d111kwgh87c0gj.cloudfront.net/stable-diffusion/lama/big-lama.pt big-lama.pt"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
