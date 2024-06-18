@@ -22,5 +22,6 @@ storage_map["stable_diffusion/models/unet"]="/opt/ComfyUI/models/unet"
 storage_map["stable_diffusion/models/vae"]="/opt/ComfyUI/models/vae"
 storage_map["stable_diffusion/models/inpaint"]="/opt/ComfyUI/models/inpaint"
 storage_map["stable_diffusion/models/lama"]="/opt/ComfyUI/models/lama"
+storage_map["stable_diffusion/models/rembg"]="/opt/ComfyUI/models/rembg"
 
 # Add more mappings for other repository directories as needed

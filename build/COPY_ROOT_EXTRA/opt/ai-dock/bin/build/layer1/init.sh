@@ -91,6 +91,10 @@ BIG_LAMA=(
     "https://huggingface.co/spaces/aryadytm/remove-photo-object/resolve/f00f2d12ada635f5f30f18ed74200ea89dd26631/assets/big-lama.pt big-lama.pt"
 )
 
+REMBG=(
+    "https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx u2net.onnx"
+)
+
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
 
 function build_extra_start() {
@@ -114,6 +118,9 @@ function build_extra_start() {
     build_extra_get_models \
         "/opt/storage/stable_diffusion/models/esrgan" \
         "${UPSCALE_MODELS[@]}"
+    build_extra_get_models \
+        "/opt/storage/stable_diffusion/models/rembg" \
+        "${REMBG[@]}"
     # build_extra_get_models \
     #     "/opt/storage/stable_diffusion/models/clip_vision" \
     #     "${CLIP_VISION[@]}"
