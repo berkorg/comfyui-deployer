@@ -118,9 +118,9 @@ function build_extra_start() {
     # build_extra_get_models \
     #     "/opt/storage/stable_diffusion/models/esrgan" \
     #     "${UPSCALE_MODELS[@]}"
-    build_extra_get_models \
-        "/opt/storage/stable_diffusion/models/rembg" \
-        "${REMBG[@]}"
+    # build_extra_get_models \
+    #     "/opt/storage/stable_diffusion/models/rembg" \
+    #     "${REMBG[@]}"
     # build_extra_get_models \
     #     "/opt/storage/stable_diffusion/models/clip_vision" \
     #     "${CLIP_VISION[@]}"
