@@ -133,8 +133,9 @@ function build_extra_start() {
     #     "/opt/ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators" \
     #     "${MIDAS_ANNOTATOR[@]}"
 
+    micromamba -n comfyui run ${PIP_INSTALL} -r /opt/ComfyUI/requirements.txt
+
     cd /opt/ComfyUI && \
-    micromamba -n comfyui run ${PIP_INSTALL} -r ./requirements.txt \
     micromamba run -n comfyui -e LD_PRELOAD=libtcmalloc.so python main.py \
         --cpu \
         --listen 127.0.0.1 \
