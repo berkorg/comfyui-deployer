@@ -12,7 +12,7 @@ NODES=(
     ## LAMA OBJECT REMOVAL
     # "https://github.com/sipherxyz/comfyui-art-venture"
     ## REMBG (Image background remover)
-    "https://github.com/berkelmas/rembg-comfyui-node"
+    # "https://github.com/berkelmas/rembg-comfyui-node"
     ## IP Adapter Plus Custom Node
     # "https://github.com/cubiq/ComfyUI_IPAdapter_plus"
     ## BASE64 Image loader
@@ -31,6 +31,8 @@ NODES=(
     # "https://github.com/wmatson/easy-comfy-nodes"
     ## Comfy Essentials
     # "https://github.com/cubiq/ComfyUI_essentials"
+    ## Inpaint Node
+    "https://github.com/Acly/comfyui-inpaint-nodes"
 )
 
 CHECKPOINT_MODELS=(
@@ -94,9 +96,9 @@ BIG_LAMA=(
 function build_extra_start() {
     build_extra_get_nodes
     build_extra_install_python_packages
-    # build_extra_get_models \
-    #     "/opt/storage/stable_diffusion/models/ckpt" \
-    #     "${CHECKPOINT_MODELS[@]}"
+    build_extra_get_models \
+        "/opt/storage/stable_diffusion/models/ckpt" \
+        "${CHECKPOINT_MODELS[@]}"
     # build_extra_get_models \
     #     "/opt/storage/stable_diffusion/models/lora" \
     #     "${LORA_MODELS[@]}"
@@ -123,9 +125,9 @@ function build_extra_start() {
     #     "/opt/storage/stable_diffusion/models/lama" \
     #     "${BIG_LAMA[@]}"
 
-    # download_extra_custom_node_models \
-    #     "/opt/storage/stable_diffusion/models/inpaint" \
-    #     "${INPAINT[@]}"
+    download_extra_custom_node_models \
+        "/opt/storage/stable_diffusion/models/inpaint" \
+        "${INPAINT[@]}"
 
     # build_extra_get_models \
     #     "/opt/ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators" \
