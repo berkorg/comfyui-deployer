@@ -7,8 +7,6 @@ PYTHON_PACKAGES=(
     "opencv-python==4.7.0.72"
     "numpy==1.26.4"
     "rembg[gpu]==2.0.57"
-    "pillow==9.5.0"
-    "torch==2.3.0"
 )
 
 NODES=(
@@ -136,6 +134,7 @@ function build_extra_start() {
     #     "${MIDAS_ANNOTATOR[@]}"
 
     cd /opt/ComfyUI && \
+    micromamba -n comfyui run ${PIP_INSTALL} -r ./requirements.txt \
     micromamba run -n comfyui -e LD_PRELOAD=libtcmalloc.so python main.py \
         --cpu \
         --listen 127.0.0.1 \
