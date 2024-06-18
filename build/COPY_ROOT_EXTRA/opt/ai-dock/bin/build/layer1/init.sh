@@ -5,6 +5,8 @@
 # Packages are installed after nodes so we can fix them...
 PYTHON_PACKAGES=(
     "opencv-python==4.7.0.72"
+    "numpy==2.0.0"
+    "rembg[gpu]==2.0.57"
 )
 
 NODES=(
@@ -12,7 +14,7 @@ NODES=(
     ## LAMA OBJECT REMOVAL
     # "https://github.com/sipherxyz/comfyui-art-venture"
     ## REMBG (Image background remover)
-    "https://github.com/berkelmas/rembg-comfyui-node"
+    "https://github.com/Jcd1230/rembg-comfyui-node"
     ## IP Adapter Plus Custom Node
     # "https://github.com/cubiq/ComfyUI_IPAdapter_plus"
     ## BASE64 Image loader
